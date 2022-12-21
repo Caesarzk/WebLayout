@@ -1098,27 +1098,27 @@ const swipper_4 = new Swiper(".swiper-4", {
 // form send
 const form = document.querySelector(".form");
 let form__fields = document.querySelectorAll(".form__name");
-form.addEventListener("submit", formSend);
-async function formSend(e) {
-    e.preventDefault();
-    let formData = new FormData(form);
-    console.log(formData.get("name"));
-    console.log(formData.get("tel"));
-    // if (form__fields[0].classList.contains("just-validate-success-field") && form__fields[1].classList.contains("just-validate-success-field")) {
-    //     let response = await fetch("sendmail.php", {
-    //         method: "POST",
-    //         body: formData
-    //     });
-    //     if (response.ok) {
-    //         let result = await response.json();
-    //         alert(result.message);
-    //         form.reset();
-    //     }
-    //     else {
-    //         alert("Ваш запрос не отправлен.");
-    //     }
-    // }
-}
+// form.addEventListener("submit", formSend);
+// async function formSend(e) {
+//     e.preventDefault();
+//     let formData = new FormData(form);
+//     console.log(formData.get("name"));
+//     console.log(formData.get("tel"));
+//     // if (form__fields[0].classList.contains("just-validate-success-field") && form__fields[1].classList.contains("just-validate-success-field")) {
+//     //     let response = await fetch("sendmail.php", {
+//     //         method: "POST",
+//     //         body: formData
+//     //     });
+//     //     if (response.ok) {
+//     //         let result = await response.json();
+//     //         alert(result.message);
+//     //         form.reset();
+//     //     }
+//     //     else {
+//     //         alert("Ваш запрос не отправлен.");
+//     //     }
+//     // }
+// }
 
 
 
