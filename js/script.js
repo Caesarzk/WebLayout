@@ -1096,8 +1096,7 @@ const swipper_4 = new Swiper(".swiper-4", {
 
 
 // form send
-const form = document.querySelector(".form");
-let form__fields = document.querySelectorAll(".form__name");
+
 
 
 
