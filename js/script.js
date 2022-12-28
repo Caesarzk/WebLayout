@@ -940,7 +940,8 @@ burger.on("click", function() {
         burger__stripe_1.addClass("burger__stripe-1--rotated");
         burger__stripe_2.addClass("burger__stripe-2--rotated");
         burger__stripe_3.addClass("burger__stripe-3--rotated");
-        console.log(document.documentElement.clientHeight)
+        let scroll_width = window.innerWidth - document.documentElement.clientWidth + "px";
+        html.css("padding-right", scroll_width);
         if($(window).height() < 768 && window.innerWidth > 576) {
             body.css("max-height", "768px");
         }
@@ -1095,7 +1096,6 @@ const swipper_4 = new Swiper(".swiper-4", {
 })
 
 
-// form send
 
 
 
