@@ -206,9 +206,14 @@ gallery__option.each(function(){
 })
 const gallery__labels = $(".gallery__label");
 gallery__labels.each(function() {
+    $(this).on("click", function(e) {
+        this.blur();
+    })
     $(this).on("keydown", function(e) {
-        if(e.keyCode == 13) {
+        if(e.keyCode == 13 || e.keyCode == 32) {
+            e.preventDefault();
             $(this).click();
+            $(this).focus();
         }
     })
 })
@@ -872,9 +877,11 @@ const catalog__painters = [
     },
 ]
 const accordion__links = $(".accordion__link");
+let lastlink = $(accordion__links[0]);
 accordion__links.each(function() {
     $(this).on("click", function(e) {
         e.preventDefault();
+        lastlink.removeClass("accordion__link--active");
         catalog__img.attr("src", catalog__painters[Number($(this).attr("data-number")) - 1].link);
         catalog__name.text($(this).text());
         catalog__date.css("display", "block").text(catalog__painters[Number($(this).attr("data-number")) - 1].date);
@@ -883,8 +890,19 @@ accordion__links.each(function() {
         if (window.innerWidth <= 992) {
             html.animate({scrollTop: catalog__img.offset().top}, 300);
         }
+        lastlink = $(this);
+        console.log(lastlink.text());
+    })
+    $(this).on("blur", function() {
+        if ($(this).text() == lastlink.text())
+        $(this).addClass("accordion__link--active");
     })
 })
+lastlink.on("focus", function() {
+    $(this).removeClass("accordion__link--active");
+})
+
+
 const gallery = $(".gallery")
 const accordion__empty_picture = $(".accordion__empty-picture");
 const catalog__link = $(".catalog__link");
@@ -1094,6 +1112,47 @@ const swipper_4 = new Swiper(".swiper-4", {
     },
     effect: "fade",
 })
+
+
+// tooltip tippy
+const tippy1 =  tippy(document.querySelector(".tooltip__btn-1"), {
+    content: "Пример современных тенденций - современная методология разработки",
+    duration: 100,
+    theme: "tooltip-1",
+    trigger: "mousedown",
+})
+const tippy2 =  tippy(document.querySelector(".tooltip__btn-2"), {
+    content: "Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции",
+    duration: 100,
+    theme: "tooltip-1",
+    trigger: "mousedown",
+})
+const tippy3 =  tippy(document.querySelector(".tooltip__btn-3"), {
+    content: "В стремлении повысить качество",
+    duration: 100,
+    theme: "tooltip-2",
+    trigger: "mousedown",
+})
+$(document).mouseup(function() {
+    tippy1.hide();
+    tippy2.hide();
+    tippy3.hide();
+})
+function setEvents(tooltip) {
+    tooltip.reference.addEventListener("keydown", function(e) {
+        if (e.keyCode == 13 || e.keyCode == 32) {
+            tooltip.show();
+        }
+    })
+    tooltip.reference.addEventListener("keyup", function(e) {
+        if (e.keyCode == 13 || e.keyCode == 32) {
+            tooltip.hide();
+        }
+    })
+}
+setEvents(tippy1);
+setEvents(tippy2);
+setEvents(tippy3);
 
 
 

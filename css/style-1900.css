@@ -813,6 +813,10 @@ button {
     color: var(--purple-light);
 }
 
+.gallery__label:active {
+    color: white;
+}
+
 [type="radio"]:checked + .checkbox .checkbox__check {
     background-color: var(--purple-light);
 }
@@ -1332,6 +1336,10 @@ button {
     transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
+.accordion__link--active {
+    color: #6300b4;
+}
+
 .accordion__link::after {
     position: absolute;
     content: "";
@@ -1732,6 +1740,42 @@ button {
     user-select: text;
 }
 
+.tippy-box[data-theme~="tooltip-1"] {
+    margin-bottom: 4px;
+    padding: 3px 3px 4px;
+    background-color: var(--purple-medium);
+    color: white;
+    text-align: center;
+    width: 265px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16.34px;
+    border-radius: 0;
+}
+
+.tippy-box[data-theme~="tooltip-1"][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: var(--purple-medium);
+    transform: scale(1.1);
+}
+
+.tippy-box[data-theme~="tooltip-2"] {
+    margin-bottom: 4px;
+    padding: 3px 3px 4px;
+    background-color: var(--purple-medium);
+    color: white;
+    text-align: center;
+    width: 232px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16.34px;
+    border-radius: 0;
+}
+
+.tippy-box[data-theme~="tooltip-2"][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: var(--purple-medium);
+    transform: scale(1.1);
+}
+
 .tooltip {
     justify-content: center;
     position: relative;
@@ -2085,12 +2129,12 @@ button {
 }
 
 .form__field:hover {
-    background-color: #ECECEC;
+    box-shadow: 0 0 0px 25px #ECECEC inset;
 }
 
 .form__field:focus {
     outline: none;
-    background-color: transparent;
+    box-shadow: 0 0 0px 25px white inset;
 }
 
 .form__field::placeholder {
