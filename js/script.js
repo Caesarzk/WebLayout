@@ -1120,18 +1120,21 @@ const tippy1 =  tippy(document.querySelector(".tooltip__btn-1"), {
     duration: 100,
     theme: "tooltip-1",
     trigger: "mousedown",
+    touch: "hold",
 })
 const tippy2 =  tippy(document.querySelector(".tooltip__btn-2"), {
     content: "Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции",
     duration: 100,
     theme: "tooltip-1",
     trigger: "mousedown",
+    touch: "hold",
 })
 const tippy3 =  tippy(document.querySelector(".tooltip__btn-3"), {
     content: "В стремлении повысить качество",
     duration: 100,
     theme: "tooltip-2",
     trigger: "mousedown",
+    touch: "hold",
 })
 $(document).mouseup(function() {
     tippy1.hide();
