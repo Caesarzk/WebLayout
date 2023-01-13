@@ -1810,6 +1810,7 @@ button {
 }
 
 .tooltip__message {
+    display: none;
     padding: 7px 11px 10px;
     font-weight: 600;
     font-size: 12px;
